@@ -1,13 +1,14 @@
 // Mobile navigation toggle with enhanced mobile support
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
-let menuToggleTimeout;
 let isMenuToggling = false;
 
 // Enhanced mobile menu functionality - fixed for mobile devices
 function mobileMenu(e) {
-    e.preventDefault();
-    e.stopPropagation();
+    if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
     
     // Prevent double-firing on mobile devices
     if (isMenuToggling) return;
@@ -20,8 +21,18 @@ function mobileMenu(e) {
     // Prevent body scrolling when mobile menu is open
     if (navMenu.classList.contains("active")) {
         document.body.style.overflow = "hidden";
+        document.body.style.position = "fixed";
+        document.body.style.width = "100%";
+        document.body.style.top = `-${window.scrollY}px`;
     } else {
+        const scrollY = document.body.style.top;
         document.body.style.overflow = "";
+        document.body.style.position = "";
+        document.body.style.width = "";
+        document.body.style.top = "";
+        if (scrollY) {
+            window.scrollTo(0, parseInt(scrollY || '0') * -1);
+        }
     }
     
     // Reset the toggle flag after a short delay
@@ -30,8 +41,15 @@ function mobileMenu(e) {
     }, 300);
 }
 
-// Use only one event listener that works for both touch and mouse
-hamburger.addEventListener("click", mobileMenu);
+// Check if elements exist before adding listeners
+if (hamburger && navMenu) {
+    // Use both touch and click events for better mobile support
+    hamburger.addEventListener("click", mobileMenu);
+    hamburger.addEventListener("touchend", function(e) {
+        e.preventDefault();
+        mobileMenu(e);
+    });
+}
 
 // Close mobile menu when clicking on a nav link
 const navLink = document.querySelectorAll(".nav-link");
@@ -41,10 +59,22 @@ navLink.forEach(n => {
 });
 
 function closeMenu() {
-    hamburger.classList.remove("active");
-    navMenu.classList.remove("active");
-    document.body.style.overflow = "";
-    isMenuToggling = false;
+    if (hamburger && navMenu) {
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+        
+        // Restore scrolling
+        const scrollY = document.body.style.top;
+        document.body.style.overflow = "";
+        document.body.style.position = "";
+        document.body.style.width = "";
+        document.body.style.top = "";
+        if (scrollY) {
+            window.scrollTo(0, parseInt(scrollY || '0') * -1);
+        }
+        
+        isMenuToggling = false;
+    }
 }
 
 // Close mobile menu when clicking outside - fixed to prevent immediate closing
@@ -311,3 +341,34 @@ window.addEventListener('orientationchange', () => {
 // Set initial viewport height for mobile browsers
 const vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+// Debug function to help identify mobile issues
+function debugMobile() {
+    console.log('Mobile Debug Info:');
+    console.log('Window width:', window.innerWidth);
+    console.log('Hamburger element:', hamburger);
+    console.log('Nav menu element:', navMenu);
+    console.log('Is mobile viewport:', window.innerWidth <= 768);
+}
+
+// Add a simple test function that can be called from the browser console
+window.testMobileMenu = function() {
+    debugMobile();
+    if (hamburger && navMenu) {
+        console.log('Testing mobile menu toggle...');
+        mobileMenu();
+    } else {
+        console.error('Mobile menu elements not found!');
+    }
+};
+
+// Ensure mobile functionality is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Mobile menu initialized');
+    debugMobile();
+    
+    // Force display hamburger on mobile if not showing
+    if (window.innerWidth <= 768 && hamburger) {
+        hamburger.style.display = 'flex';
+    }
+});
