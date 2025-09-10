@@ -1,23 +1,59 @@
-// Mobile navigation toggle
+// Mobile navigation toggle with enhanced mobile support
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 
+// Enhanced mobile menu functionality
 hamburger.addEventListener("click", mobileMenu);
+hamburger.addEventListener("touchstart", mobileMenu, { passive: true });
 
 function mobileMenu() {
     hamburger.classList.toggle("active");
     navMenu.classList.toggle("active");
+    
+    // Prevent body scrolling when mobile menu is open
+    if (navMenu.classList.contains("active")) {
+        document.body.style.overflow = "hidden";
+    } else {
+        document.body.style.overflow = "";
+    }
 }
 
 // Close mobile menu when clicking on a nav link
 const navLink = document.querySelectorAll(".nav-link");
 
-navLink.forEach(n => n.addEventListener("click", closeMenu));
+navLink.forEach(n => {
+    n.addEventListener("click", closeMenu);
+    n.addEventListener("touchend", closeMenu, { passive: true });
+});
 
 function closeMenu() {
     hamburger.classList.remove("active");
     navMenu.classList.remove("active");
+    document.body.style.overflow = "";
 }
+
+// Close mobile menu when clicking outside
+document.addEventListener("click", (e) => {
+    if (navMenu.classList.contains("active") && 
+        !navMenu.contains(e.target) && 
+        !hamburger.contains(e.target)) {
+        closeMenu();
+    }
+});
+
+// Close mobile menu on escape key
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && navMenu.classList.contains("active")) {
+        closeMenu();
+    }
+});
+
+// Close mobile menu on window resize (if user rotates device)
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) {
+        closeMenu();
+    }
+});
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -33,17 +69,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Add scroll effect to navbar
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 100) {
-        navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-        navbar.style.backdropFilter = 'blur(10px)';
-    } else {
-        navbar.style.backgroundColor = '#fff';
-        navbar.style.backdropFilter = 'none';
-    }
-});
+// Scroll effect is now handled by the mobile-optimized version below
 
 // Form submission handling
 const contactForm = document.querySelector('form');
@@ -132,3 +158,135 @@ function typeWriter(element, text, speed = 100) {
 //         typeWriter(heroTitle, originalText, 100);
 //     }
 // });
+
+// Mobile touch gesture support
+let touchStartX = 0;
+let touchEndX = 0;
+let touchStartY = 0;
+let touchEndY = 0;
+
+function handleSwipeGesture() {
+    const horizontalDistance = touchEndX - touchStartX;
+    const verticalDistance = Math.abs(touchEndY - touchStartY);
+    const minSwipeDistance = 100;
+    
+    // Only trigger horizontal swipes if vertical movement is minimal
+    if (verticalDistance < 50) {
+        // Swipe left - open mobile menu
+        if (horizontalDistance > minSwipeDistance && !navMenu.classList.contains("active") && window.innerWidth <= 768) {
+            hamburger.classList.add("active");
+            navMenu.classList.add("active");
+            document.body.style.overflow = "hidden";
+        }
+        
+        // Swipe right - close mobile menu
+        if (horizontalDistance < -minSwipeDistance && navMenu.classList.contains("active") && window.innerWidth <= 768) {
+            closeMenu();
+        }
+    }
+}
+
+// Add touch event listeners for swipe gestures
+document.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+}, { passive: true });
+
+document.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    touchEndY = e.changedTouches[0].screenY;
+    handleSwipeGesture();
+}, { passive: true });
+
+// Enhanced mobile performance optimizations
+let ticking = false;
+
+function updateNavbarOnScroll() {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 100) {
+        navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+        navbar.style.backdropFilter = 'blur(10px)';
+    } else {
+        navbar.style.backgroundColor = '#fff';
+        navbar.style.backdropFilter = 'none';
+    }
+    ticking = false;
+}
+
+// Throttled scroll handler for better performance
+window.addEventListener('scroll', () => {
+    if (!ticking) {
+        requestAnimationFrame(updateNavbarOnScroll);
+        ticking = true;
+    }
+}, { passive: true });
+
+// Mobile-friendly form enhancements
+document.addEventListener('DOMContentLoaded', () => {
+    // Add mobile-specific form improvements
+    const inputs = document.querySelectorAll('input, textarea, select');
+    
+    inputs.forEach(input => {
+        // Prevent zoom on focus for iOS
+        input.addEventListener('focus', () => {
+            if (window.innerWidth <= 768) {
+                document.querySelector('meta[name="viewport"]').content = 
+                    'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
+            }
+        });
+        
+        input.addEventListener('blur', () => {
+            if (window.innerWidth <= 768) {
+                document.querySelector('meta[name="viewport"]').content = 
+                    'width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover';
+            }
+        });
+    });
+    
+    // Add haptic feedback for supported devices
+    const addHapticFeedback = (element) => {
+        element.addEventListener('touchstart', () => {
+            if ('vibrate' in navigator) {
+                navigator.vibrate(10); // Very light vibration
+            }
+        }, { passive: true });
+    };
+    
+    // Add haptic feedback to interactive elements
+    document.querySelectorAll('.btn, .research-card, .hamburger, .nav-link').forEach(addHapticFeedback);
+    
+    // Lazy loading for better mobile performance
+    if ('IntersectionObserver' in window) {
+        const lazyImages = document.querySelectorAll('img[data-src]');
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+        
+        lazyImages.forEach(img => imageObserver.observe(img));
+    }
+});
+
+// Mobile orientation change handler
+window.addEventListener('orientationchange', () => {
+    // Close mobile menu on orientation change
+    if (navMenu.classList.contains("active")) {
+        closeMenu();
+    }
+    
+    // Refresh viewport after orientation change
+    setTimeout(() => {
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }, 100);
+});
+
+// Set initial viewport height for mobile browsers
+const vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
