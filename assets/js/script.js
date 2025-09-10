@@ -1,12 +1,19 @@
 // Mobile navigation toggle with enhanced mobile support
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
+let menuToggleTimeout;
+let isMenuToggling = false;
 
-// Enhanced mobile menu functionality
-hamburger.addEventListener("click", mobileMenu);
-hamburger.addEventListener("touchstart", mobileMenu, { passive: true });
-
-function mobileMenu() {
+// Enhanced mobile menu functionality - fixed for mobile devices
+function mobileMenu(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    // Prevent double-firing on mobile devices
+    if (isMenuToggling) return;
+    
+    isMenuToggling = true;
+    
     hamburger.classList.toggle("active");
     navMenu.classList.toggle("active");
     
@@ -16,29 +23,41 @@ function mobileMenu() {
     } else {
         document.body.style.overflow = "";
     }
+    
+    // Reset the toggle flag after a short delay
+    setTimeout(() => {
+        isMenuToggling = false;
+    }, 300);
 }
+
+// Use only one event listener that works for both touch and mouse
+hamburger.addEventListener("click", mobileMenu);
 
 // Close mobile menu when clicking on a nav link
 const navLink = document.querySelectorAll(".nav-link");
 
 navLink.forEach(n => {
     n.addEventListener("click", closeMenu);
-    n.addEventListener("touchend", closeMenu, { passive: true });
 });
 
 function closeMenu() {
     hamburger.classList.remove("active");
     navMenu.classList.remove("active");
     document.body.style.overflow = "";
+    isMenuToggling = false;
 }
 
-// Close mobile menu when clicking outside
+// Close mobile menu when clicking outside - fixed to prevent immediate closing
 document.addEventListener("click", (e) => {
-    if (navMenu.classList.contains("active") && 
-        !navMenu.contains(e.target) && 
-        !hamburger.contains(e.target)) {
-        closeMenu();
-    }
+    // Add a small delay to prevent immediate closing after opening
+    setTimeout(() => {
+        if (navMenu.classList.contains("active") && 
+            !navMenu.contains(e.target) && 
+            !hamburger.contains(e.target) &&
+            !isMenuToggling) {
+            closeMenu();
+        }
+    }, 100);
 });
 
 // Close mobile menu on escape key
@@ -170,16 +189,18 @@ function handleSwipeGesture() {
     const verticalDistance = Math.abs(touchEndY - touchStartY);
     const minSwipeDistance = 100;
     
-    // Only trigger horizontal swipes if vertical movement is minimal
-    if (verticalDistance < 50) {
-        // Swipe left - open mobile menu
+    // Only trigger horizontal swipes if vertical movement is minimal and not currently toggling
+    if (verticalDistance < 50 && !isMenuToggling) {
+        // Swipe right - open mobile menu
         if (horizontalDistance > minSwipeDistance && !navMenu.classList.contains("active") && window.innerWidth <= 768) {
+            isMenuToggling = true;
             hamburger.classList.add("active");
             navMenu.classList.add("active");
             document.body.style.overflow = "hidden";
+            setTimeout(() => { isMenuToggling = false; }, 300);
         }
         
-        // Swipe right - close mobile menu
+        // Swipe left - close mobile menu
         if (horizontalDistance < -minSwipeDistance && navMenu.classList.contains("active") && window.innerWidth <= 768) {
             closeMenu();
         }
