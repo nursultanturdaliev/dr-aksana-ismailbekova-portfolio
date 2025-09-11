@@ -20,13 +20,14 @@ This guide will help you add new documents, research papers, and other files to 
 - Copy your document into this `files` folder
 
 **Step 3: Get the Code You Need**
-- Use the File Helper Tool (see next section) to automatically create the website code
-- This tool will ask you simple questions and give you the code to copy
+- Copy one of the HTML templates below based on your file type
+- Replace the parts marked in CAPITAL LETTERS with your specific information
+- The complete code is ready to paste into your website
 
 **Step 4: Add the Code to Your Website**
 - Open the file called `index.html`
-- Find the section where you want your file to appear
-- Paste the code you got from the File Helper Tool
+- Find the section where you want your file to appear (like "Recent Research Papers" or "Academic Documents")
+- Paste the HTML code template with your information filled in
 
 ### Method 2: The Template Way
 
@@ -34,44 +35,98 @@ Use the ready-made templates provided in this guide (scroll down to see them)
 
 ---
 
-## 🛠️ File Helper Tool
+## 🛠️ Ready-to-Use HTML Code Templates
 
-**[Use this simple form to generate the code you need - no technical knowledge required!]**
-
-*Note: Open the file `file-helper.html` that comes with this guide to use the interactive tool.*
+**Copy these templates and replace the CAPITAL LETTER parts with your information:**
 
 ## 📋 Simple Templates (Copy & Paste)
 
-### Template 1: Research Paper or Article
+### Template 1: Research Paper or Article (PDF)
 **Use this when adding a PDF research paper**
 
+```html
+<div class="file-download-item">
+    <div class="file-info">
+        <h4>"YOUR_PAPER_TITLE_HERE"</h4>
+        <p>YOUR_DESCRIPTION_HERE</p>
+        <div class="file-meta">PDF Document</div>
+    </div>
+    <div class="file-actions">
+        <a href="assets/files/YOUR_FILE_NAME.pdf" class="btn-download" download>
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+            </svg>
+            Download PDF
+        </a>
+    </div>
+</div>
 ```
-Replace these parts with your information:
-- YOUR_FILE_NAME.pdf → the name of your PDF file
-- Your Paper Title → the title you want to show
-- Brief description here → a short description of your paper
 
-Then copy the code from the File Helper Tool or use Method 2 below.
-```
+**Replace these parts:**
+- `YOUR_PAPER_TITLE_HERE` → the title you want to show (keep the quotation marks if it's a paper title)
+- `YOUR_DESCRIPTION_HERE` → a short description of your paper
+- `YOUR_FILE_NAME.pdf` → your actual PDF filename
 
-### Template 2: CV or Resume
+### Template 2: CV or Resume (Word Document)
 **Use this when adding a new CV or resume**
 
+```html
+<div class="file-download-item">
+    <div class="file-info">
+        <h4>Curriculum Vitae</h4>
+        <p>YOUR_CV_DESCRIPTION_HERE</p>
+        <div class="file-meta">DOCX Document</div>
+    </div>
+    <div class="file-actions">
+        <a href="assets/files/YOUR_CV_FILE_NAME.docx" class="btn-download" download>
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+            </svg>
+            Download DOCX
+        </a>
+    </div>
+</div>
 ```
-Replace these parts:
-- YOUR_CV_FILE_NAME.docx → your CV filename  
-- Latest CV description → description of your CV
 
-Then follow the steps above.
-```
+**Replace these parts:**
+- `YOUR_CV_DESCRIPTION_HERE` → description of your CV (e.g., "Updated academic CV with latest publications and achievements")
+- `YOUR_CV_FILE_NAME.docx` → your CV filename
 
 ### Template 3: Presentation or Other Documents
 **Use this for PowerPoint files, reports, or other documents**
 
+```html
+<div class="file-download-item">
+    <div class="file-info">
+        <h4>YOUR_DOCUMENT_TITLE_HERE</h4>
+        <p>YOUR_DESCRIPTION_HERE</p>
+        <div class="file-meta">YOUR_FILE_TYPE Document</div>
+    </div>
+    <div class="file-actions">
+        <a href="assets/files/YOUR_FILE_NAME.YOUR_EXTENSION" class="btn-download" download>
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+            </svg>
+            Download YOUR_FILE_TYPE
+        </a>
+    </div>
+</div>
 ```
-Works for: .pptx, .doc, .zip, .xlsx and other files
-Replace with your specific file information.
-```
+
+**Replace these parts:**
+- `YOUR_DOCUMENT_TITLE_HERE` → the title of your document
+- `YOUR_DESCRIPTION_HERE` → a short description 
+- `YOUR_FILE_TYPE` → file type (e.g., PPTX, XLSX, ZIP, DOC)
+- `YOUR_FILE_NAME.YOUR_EXTENSION` → complete filename with extension
+
+**Common file types:**
+- PowerPoint: `.pptx` (use "PPTX" for file type)
+- Excel: `.xlsx` (use "XLSX" for file type)  
+- ZIP archive: `.zip` (use "ZIP" for file type)
+- Word document: `.docx` (use "DOCX" for file type)
 
 ---
 
@@ -107,7 +162,7 @@ All files you add will automatically have:
 ### Creating New Categories
 **Want to add a new type of document section?**
 - You can create sections like "Conference Presentations", "Reports", "Teaching Materials", etc.
-- Use the File Helper Tool to generate the section code
+- Use the HTML templates above and wrap them in a new section with a heading
 
 ---
 
@@ -184,8 +239,8 @@ All files you add will automatically have:
 **Here's everything you need to remember:**
 
 1. **Put your file** in the `assets/files/` folder
-2. **Use the File Helper Tool** (file-helper.html) to generate the website code
-3. **Copy the generated code** into your `index.html` file in the right section
+2. **Copy an HTML template** from this guide and replace the placeholder text with your information
+3. **Paste the completed code** into your `index.html` file in the right section
 4. **Test your download button** to make sure it works
 
 **That's it! No technical knowledge required.** 🎉
@@ -196,7 +251,7 @@ All files you add will automatically have:
 
 If you're still having trouble:
 1. Double-check that you followed each step exactly
-2. Try using the File Helper Tool if you haven't already
+2. Make sure you replaced ALL placeholder text in the HTML template
 3. Make sure your file name doesn't have any spaces or special characters
 4. Contact your web developer for technical assistance
 
