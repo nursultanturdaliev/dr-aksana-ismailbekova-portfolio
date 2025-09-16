@@ -9,7 +9,7 @@
 
 ## 👩‍🎓 About Dr. Aksana Ismailbekova
 
-Dr. Aksana Ismailbekova is a distinguished **Senior Research Fellow** at the Leibniz-Zentrum Moderner Orient (ZMO) in Berlin, Germany. She specializes in:
+Dr. Aksana Ismailbekova is a **Senior Research Fellow** at the Leibniz-Zentrum Moderner Orient (ZMO) in Berlin, Germany. She specializes in:
 
 - **Kinship & Ethnicity Studies** in Central Asia
 - **Patronage & Informal Governance** systems
