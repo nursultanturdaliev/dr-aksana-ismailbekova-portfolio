@@ -496,10 +496,58 @@ p {
 /* CV Specific Styles */
 .cv-hero {
     padding: 130px 0 80px 0;
+    background: 
+        /* Enhanced Kyrgyz ornaments with yurt and mountain motifs */
+        url("data:image/svg+xml,%3Csvg width='140' height='140' viewBox='0 0 140 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='kyrgyz-yurt-pattern' x='0' y='0' width='70' height='70' patternUnits='userSpaceOnUse'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.08)' stroke-width='1'%3E%3C!-- Traditional Yurt structure --%3E%3Ccircle cx='35' cy='35' r='20' stroke='rgba(255,255,255,0.09)' fill='rgba(255,255,255,0.02)'/%3E%3Cpath d='M15 35 L35 15 L55 35' stroke='rgba(255,255,255,0.08)' fill='rgba(255,255,255,0.03)'/%3E%3Cpath d='M20 35 L35 25 L50 35' stroke='rgba(255,255,255,0.07)'/%3E%3C!-- Tunduk (crown wheel) pattern --%3E%3Ccircle cx='35' cy='35' r='8' stroke='rgba(255,255,255,0.1)' fill='none'/%3E%3Cpath d='M27 35 L43 35 M35 27 L35 43 M30 30 L40 40 M40 30 L30 40' stroke='rgba(255,255,255,0.08)' stroke-width='0.5'/%3E%3C!-- Mountain range silhouette --%3E%3Cpath d='M5 65 L15 50 L25 58 L35 45 L45 58 L55 50 L65 65' stroke='rgba(255,255,255,0.09)' fill='rgba(255,255,255,0.02)'/%3E%3C!-- Felt patterns (traditional yurt covering) --%3E%3Cpath d='M15 40 Q20 35 25 40 Q30 35 35 40 Q40 35 45 40 Q50 35 55 40' stroke='rgba(255,255,255,0.06)' stroke-width='0.8' fill='none'/%3E%3C!-- Snow caps on mountains --%3E%3Cpath d='M12 52 L18 50 L24 52 M32 47 L38 45 L44 47 M52 52 L58 50 L64 52' stroke='rgba(255,255,255,0.12)' stroke-width='1.2'/%3E%3C!-- Traditional geometric borders --%3E%3Crect x='0' y='0' width='70' height='70' stroke='rgba(255,255,255,0.05)' stroke-dasharray='3,3' fill='none'/%3E%3C!-- Corner ornamental stars --%3E%3Cpath d='M8 8 L12 12 L8 16 L4 12 Z' fill='rgba(255,255,255,0.04)' stroke='rgba(255,255,255,0.08)'/%3E%3Cpath d='M62 8 L66 12 L62 16 L58 12 Z' fill='rgba(255,255,255,0.04)' stroke='rgba(255,255,255,0.08)'/%3E%3Cpath d='M8 62 L12 66 L8 70 L4 66 Z' fill='rgba(255,255,255,0.04)' stroke='rgba(255,255,255,0.08)'/%3E%3Cpath d='M62 62 L66 66 L62 70 L58 66 Z' fill='rgba(255,255,255,0.04)' stroke='rgba(255,255,255,0.08)'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23kyrgyz-yurt-pattern)'/%3E%3C/svg%3E"),
+        /* Base gradient */
+        linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-size: 140px 140px, cover;
+    background-repeat: repeat, no-repeat;
+}
+
+.cv-hero-layout {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cv-hero-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cv-profile-image {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+}
+
+.cv-profile-image:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+}
+
+.cv-hero .hero-content {
+    text-align: left;
 }
 
 .cv-content {
     padding: 60px 0;
+    background: 
+        /* Subtle mountain range pattern for CV content */
+        url("data:image/svg+xml,%3Csvg width='200' height='60' viewBox='0 0 200 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 60 L25 40 L50 50 L75 30 L100 45 L125 25 L150 40 L175 35 L200 50 L200 60 Z' fill='rgba(52,152,219,0.02)' stroke='rgba(52,152,219,0.08)' stroke-width='0.5'/%3E%3Cpath d='M0 60 L20 45 L40 55 L60 35 L80 50 L100 30 L120 45 L140 40 L160 50 L180 35 L200 45 L200 60 Z' fill='rgba(52,152,219,0.015)' stroke='rgba(52,152,219,0.06)' stroke-width='0.3'/%3E%3C/svg%3E"),
+        #fefefe;
+    background-size: 400px 60px, cover;
+    background-repeat: repeat-x, no-repeat;
+    background-position: 0 0, center;
 }
 
 .cv-section {
@@ -610,9 +658,14 @@ p {
 }
 
 .cv-publications {
-    background: #f8f9fa;
+    background: 
+        /* Traditional Kyrgyz carpet pattern for publications */
+        url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='carpet-pattern' x='0' y='0' width='40' height='40' patternUnits='userSpaceOnUse'%3E%3Cg fill='none' stroke='rgba(52,152,219,0.08)' stroke-width='0.5'%3E%3C!-- Traditional diamond motif --%3E%3Cpath d='M20 5 L30 15 L20 25 L10 15 Z' fill='rgba(52,152,219,0.02)' stroke='rgba(52,152,219,0.06)'/%3E%3C!-- Inner diamond --%3E%3Cpath d='M20 10 L25 15 L20 20 L15 15 Z' fill='rgba(52,152,219,0.03)' stroke='rgba(52,152,219,0.08)'/%3E%3C!-- Corner decorations --%3E%3Ccircle cx='5' cy='5' r='2' fill='rgba(52,152,219,0.04)'/%3E%3Ccircle cx='35' cy='5' r='2' fill='rgba(52,152,219,0.04)'/%3E%3Ccircle cx='5' cy='35' r='2' fill='rgba(52,152,219,0.04)'/%3E%3Ccircle cx='35' cy='35' r='2' fill='rgba(52,152,219,0.04)'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23carpet-pattern)'/%3E%3C/svg%3E"),
+        #f8f9fa;
     padding: 2rem;
     border-radius: 10px;
+    background-size: 80px 80px, cover;
+    background-repeat: repeat, no-repeat;
 }
 
 .publication-category {
@@ -682,12 +735,17 @@ p {
 }
 
 .download-card {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: 
+        /* Kyrgyz felt pattern overlay */
+        url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='felt-pattern' x='0' y='0' width='50' height='50' patternUnits='userSpaceOnUse'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.1)' stroke-width='0.8'%3E%3C!-- Felt texture waves --%3E%3Cpath d='M0 25 Q12.5 15 25 25 Q37.5 35 50 25' fill='none'/%3E%3Cpath d='M0 35 Q12.5 25 25 35 Q37.5 45 50 35' fill='none'/%3E%3Cpath d='M0 15 Q12.5 5 25 15 Q37.5 25 50 15' fill='none'/%3E%3C!-- Traditional spiral motifs --%3E%3Ccircle cx='12.5' cy='12.5' r='4' fill='none' stroke='rgba(255,255,255,0.08)'/%3E%3Ccircle cx='37.5' cy='37.5' r='4' fill='none' stroke='rgba(255,255,255,0.08)'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23felt-pattern)'/%3E%3C/svg%3E"),
+        linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     padding: 3rem 2rem;
     border-radius: 15px;
     max-width: 600px;
     margin: 0 auto;
+    background-size: 100px 100px, cover;
+    background-repeat: repeat, no-repeat;
 }
 
 .download-card h3 {
@@ -933,6 +991,33 @@ footer {
         text-align: center;
     }
 
+    /* CV Mobile Layout */
+    .cv-hero {
+        background-size: 90px 90px, cover; /* Smaller yurt pattern for mobile */
+    }
+    
+    .cv-hero-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .cv-hero .hero-content {
+        text-align: center;
+        order: 2;
+    }
+
+    .cv-hero-photo {
+        order: 1;
+        margin-bottom: 1rem;
+    }
+
+    .cv-profile-image {
+        width: 180px;
+        height: 180px;
+        border: 3px solid rgba(255, 255, 255, 0.25);
+    }
+
     .hero-content {
         text-align: center;
         order: 2;
@@ -1102,6 +1187,16 @@ footer {
         background-size: 60px 60px, cover; /* Even smaller pattern for very small screens */
     }
 
+    .cv-hero {
+        background-size: 70px 70px, cover; /* Even smaller yurt pattern for very small screens */
+    }
+
+    .cv-profile-image {
+        width: 140px;
+        height: 140px;
+        border: 2px solid rgba(255, 255, 255, 0.25);
+    }
+
     .hero-description {
         font-size: 1rem;
         max-width: 100%;
@@ -1160,6 +1255,30 @@ footer {
         grid-template-columns: 1fr;
         gap: 3rem;
         text-align: center;
+    }
+
+    .cv-hero {
+        background-size: 110px 110px, cover; /* Medium yurt pattern size for tablets */
+    }
+    
+    .cv-hero-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+
+    .cv-hero .hero-content {
+        text-align: center;
+        order: 2;
+    }
+
+    .cv-hero-photo {
+        order: 1;
+    }
+
+    .cv-profile-image {
+        width: 200px;
+        height: 200px;
     }
 
     .hero-content {
