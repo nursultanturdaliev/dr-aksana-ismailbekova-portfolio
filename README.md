@@ -16,7 +16,7 @@ Dr. Aksana Ismailbekova is a **Senior Research Fellow** at the Leibniz-Zentrum M
 - **Conflict Resolution & Gender Studies**
 - **Migration & Transnational Communities**
 
-With over **15 years of fieldwork experience** across Kyrgyzstan, Uzbekistan, Kazakhstan, and Russia, Dr. Ismailbekova is fluent in **seven languages** and has secured over **€200,000** in competitive research funding.
+With over **15 years of fieldwork experience** across Kyrgyzstan, Uzbekistan, Kazakhstan, and Russia, Dr. Ismailbekova is fluent in **several languages** and has secured over **€200,000** in competitive research funding.
 
 ---
 
