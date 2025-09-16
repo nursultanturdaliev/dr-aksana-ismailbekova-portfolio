@@ -183,11 +183,11 @@ p {
 .hero {
     padding: 150px 0 100px 0;
     background: 
-        /* Kyrgyz ornamental pattern overlay */
-        url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='kyrgyz-pattern' x='0' y='0' width='60' height='60' patternUnits='userSpaceOnUse'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.08)' stroke-width='1'%3E%3C!-- Traditional Kyrgyz star motif --%3E%3Cpath d='M30 10 L35 20 L45 20 L37 28 L40 38 L30 32 L20 38 L23 28 L15 20 L25 20 Z' fill='rgba(255,255,255,0.05)'/%3E%3C!-- Geometric border pattern --%3E%3Crect x='0' y='0' width='60' height='60' stroke='rgba(255,255,255,0.06)' stroke-dasharray='2,2' fill='none'/%3E%3C!-- Mountain motifs (triangular patterns) --%3E%3Cpath d='M0 60 L10 45 L20 60 Z M40 60 L50 45 L60 60 Z' stroke='rgba(255,255,255,0.06)' fill='rgba(255,255,255,0.03)'/%3E%3C!-- Central ornamental cross --%3E%3Cpath d='M25 25 L35 25 M30 20 L30 40 M27 27 L33 33 M33 27 L27 33' stroke='rgba(255,255,255,0.07)' stroke-width='0.8'/%3E%3C!-- Corner decorative elements --%3E%3Ccircle cx='10' cy='10' r='3' fill='none' stroke='rgba(255,255,255,0.06)'/%3E%3Ccircle cx='50' cy='10' r='3' fill='none' stroke='rgba(255,255,255,0.06)'/%3E%3Ccircle cx='10' cy='50' r='3' fill='none' stroke='rgba(255,255,255,0.06)'/%3E%3Ccircle cx='50' cy='50' r='3' fill='none' stroke='rgba(255,255,255,0.06)'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23kyrgyz-pattern)'/%3E%3C/svg%3E"),
+        /* Traditional scroll ornaments pattern */
+        url("data:image/svg+xml,%3Csvg width='160' height='160' viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='scroll-ornaments' x='0' y='0' width='80' height='80' patternUnits='userSpaceOnUse'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.08)' stroke-width='1.2'%3E%3C!-- Fleur-de-lis style ornament (top-left) --%3E%3Cpath d='M20 15 C15 10, 10 15, 15 20 C10 25, 15 30, 20 25 C25 30, 30 25, 25 20 C30 15, 25 10, 20 15 Z M20 25 L20 30 M17 27 L23 27' stroke='rgba(255,255,255,0.09)' fill='rgba(255,255,255,0.03)'/%3E%3C!-- Triangular scroll (top-right) --%3E%3Cpath d='M60 15 C55 20, 60 25, 65 20 C70 25, 75 20, 70 15 C65 10, 60 15, 60 15 Z M60 20 Q65 15, 70 20' stroke='rgba(255,255,255,0.08)' fill='rgba(255,255,255,0.025)'/%3E%3C!-- Flowing corner scroll (bottom-left) --%3E%3Cpath d='M15 55 Q20 50, 25 55 Q30 60, 25 65 Q20 70, 15 65 Q10 60, 15 55 Z M15 60 Q20 55, 25 60' stroke='rgba(255,255,255,0.07)' fill='rgba(255,255,255,0.02)'/%3E%3C!-- Heart-shaped scroll (bottom-right) --%3E%3Cpath d='M60 55 C55 50, 50 55, 55 60 C50 65, 55 70, 60 65 C65 70, 70 65, 65 60 C70 55, 65 50, 60 55 Z' stroke='rgba(255,255,255,0.09)' fill='rgba(255,255,255,0.03)'/%3E%3C!-- Central connecting scrollwork --%3E%3Cpath d='M30 30 Q40 25, 50 30 Q60 35, 50 40 Q40 45, 30 40 Q20 35, 30 30' stroke='rgba(255,255,255,0.06)' stroke-width='0.8' fill='none'/%3E%3Cpath d='M25 40 Q40 35, 55 40 Q70 45, 55 50 Q40 55, 25 50 Q10 45, 25 40' stroke='rgba(255,255,255,0.05)' stroke-width='0.6' fill='none'/%3E%3C!-- Delicate corner flourishes --%3E%3Cpath d='M5 5 Q10 2, 15 5 Q12 10, 5 5' stroke='rgba(255,255,255,0.06)' fill='rgba(255,255,255,0.02)'/%3E%3Cpath d='M65 5 Q70 2, 75 5 Q72 10, 65 5' stroke='rgba(255,255,255,0.06)' fill='rgba(255,255,255,0.02)'/%3E%3Cpath d='M5 65 Q10 62, 15 65 Q12 70, 5 65' stroke='rgba(255,255,255,0.06)' fill='rgba(255,255,255,0.02)'/%3E%3Cpath d='M65 65 Q70 62, 75 65 Q72 70, 65 65' stroke='rgba(255,255,255,0.06)' fill='rgba(255,255,255,0.02)'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23scroll-ornaments)'/%3E%3C/svg%3E"),
         /* Base gradient */
         linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    background-size: 120px 120px, cover;
+    background-size: 160px 160px, cover;
     background-repeat: repeat, no-repeat;
     color: white;
     position: relative;
@@ -497,11 +497,11 @@ p {
 .cv-hero {
     padding: 130px 0 80px 0;
     background: 
-        /* Enhanced Kyrgyz ornaments with yurt and mountain motifs */
-        url("data:image/svg+xml,%3Csvg width='140' height='140' viewBox='0 0 140 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='kyrgyz-yurt-pattern' x='0' y='0' width='70' height='70' patternUnits='userSpaceOnUse'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.08)' stroke-width='1'%3E%3C!-- Traditional Yurt structure --%3E%3Ccircle cx='35' cy='35' r='20' stroke='rgba(255,255,255,0.09)' fill='rgba(255,255,255,0.02)'/%3E%3Cpath d='M15 35 L35 15 L55 35' stroke='rgba(255,255,255,0.08)' fill='rgba(255,255,255,0.03)'/%3E%3Cpath d='M20 35 L35 25 L50 35' stroke='rgba(255,255,255,0.07)'/%3E%3C!-- Tunduk (crown wheel) pattern --%3E%3Ccircle cx='35' cy='35' r='8' stroke='rgba(255,255,255,0.1)' fill='none'/%3E%3Cpath d='M27 35 L43 35 M35 27 L35 43 M30 30 L40 40 M40 30 L30 40' stroke='rgba(255,255,255,0.08)' stroke-width='0.5'/%3E%3C!-- Mountain range silhouette --%3E%3Cpath d='M5 65 L15 50 L25 58 L35 45 L45 58 L55 50 L65 65' stroke='rgba(255,255,255,0.09)' fill='rgba(255,255,255,0.02)'/%3E%3C!-- Felt patterns (traditional yurt covering) --%3E%3Cpath d='M15 40 Q20 35 25 40 Q30 35 35 40 Q40 35 45 40 Q50 35 55 40' stroke='rgba(255,255,255,0.06)' stroke-width='0.8' fill='none'/%3E%3C!-- Snow caps on mountains --%3E%3Cpath d='M12 52 L18 50 L24 52 M32 47 L38 45 L44 47 M52 52 L58 50 L64 52' stroke='rgba(255,255,255,0.12)' stroke-width='1.2'/%3E%3C!-- Traditional geometric borders --%3E%3Crect x='0' y='0' width='70' height='70' stroke='rgba(255,255,255,0.05)' stroke-dasharray='3,3' fill='none'/%3E%3C!-- Corner ornamental stars --%3E%3Cpath d='M8 8 L12 12 L8 16 L4 12 Z' fill='rgba(255,255,255,0.04)' stroke='rgba(255,255,255,0.08)'/%3E%3Cpath d='M62 8 L66 12 L62 16 L58 12 Z' fill='rgba(255,255,255,0.04)' stroke='rgba(255,255,255,0.08)'/%3E%3Cpath d='M8 62 L12 66 L8 70 L4 66 Z' fill='rgba(255,255,255,0.04)' stroke='rgba(255,255,255,0.08)'/%3E%3Cpath d='M62 62 L66 66 L62 70 L58 66 Z' fill='rgba(255,255,255,0.04)' stroke='rgba(255,255,255,0.08)'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23kyrgyz-yurt-pattern)'/%3E%3C/svg%3E"),
+        /* Enhanced traditional scroll ornaments for CV */
+        url("data:image/svg+xml,%3Csvg width='180' height='180' viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='cv-scroll-ornaments' x='0' y='0' width='90' height='90' patternUnits='userSpaceOnUse'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.09)' stroke-width='1.4'%3E%3C!-- Elaborate fleur-de-lis (center) --%3E%3Cpath d='M45 20 C40 15, 35 20, 40 25 C35 30, 40 35, 45 30 C50 35, 55 30, 50 25 C55 20, 50 15, 45 20 Z M45 30 L45 35 M42 32 L48 32' stroke='rgba(255,255,255,0.1)' fill='rgba(255,255,255,0.04)'/%3E%3C!-- Corner scrolls with heart motifs --%3E%3Cpath d='M15 15 C10 10, 5 15, 10 20 C5 25, 10 30, 15 25 C20 30, 25 25, 20 20 C25 15, 20 10, 15 15' stroke='rgba(255,255,255,0.08)' fill='rgba(255,255,255,0.025)'/%3E%3Cpath d='M75 15 C70 10, 65 15, 70 20 C65 25, 70 30, 75 25 C80 30, 85 25, 80 20 C85 15, 80 10, 75 15' stroke='rgba(255,255,255,0.08)' fill='rgba(255,255,255,0.025)'/%3E%3Cpath d='M15 75 C10 70, 5 75, 10 80 C5 85, 10 90, 15 85 C20 90, 25 85, 20 80 C25 75, 20 70, 15 75' stroke='rgba(255,255,255,0.08)' fill='rgba(255,255,255,0.025)'/%3E%3Cpath d='M75 75 C70 70, 65 75, 70 80 C65 85, 70 90, 75 85 C80 90, 85 85, 80 80 C85 75, 80 70, 75 75' stroke='rgba(255,255,255,0.08)' fill='rgba(255,255,255,0.025)'/%3E%3C!-- Flowing connecting scrollwork --%3E%3Cpath d='M30 45 Q45 40, 60 45 Q75 50, 60 55 Q45 60, 30 55 Q15 50, 30 45' stroke='rgba(255,255,255,0.06)' stroke-width='1' fill='none'/%3E%3Cpath d='M45 30 Q50 45, 45 60 Q40 75, 45 60 Q50 45, 45 30' stroke='rgba(255,255,255,0.05)' stroke-width='0.8' fill='none'/%3E%3C!-- Delicate spiral flourishes --%3E%3Cpath d='M10 45 Q15 40, 20 45 Q25 50, 20 55 Q15 60, 10 55 Q5 50, 10 45' stroke='rgba(255,255,255,0.07)' fill='rgba(255,255,255,0.02)'/%3E%3Cpath d='M70 45 Q75 40, 80 45 Q85 50, 80 55 Q75 60, 70 55 Q65 50, 70 45' stroke='rgba(255,255,255,0.07)' fill='rgba(255,255,255,0.02)'/%3E%3Cpath d='M45 10 Q50 15, 45 20 Q40 25, 45 20 Q50 15, 45 10' stroke='rgba(255,255,255,0.07)' fill='rgba(255,255,255,0.02)'/%3E%3Cpath d='M45 70 Q50 75, 45 80 Q40 85, 45 80 Q50 75, 45 70' stroke='rgba(255,255,255,0.07)' fill='rgba(255,255,255,0.02)'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23cv-scroll-ornaments)'/%3E%3C/svg%3E"),
         /* Base gradient */
         linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    background-size: 140px 140px, cover;
+    background-size: 180px 180px, cover;
     background-repeat: repeat, no-repeat;
 }
 
@@ -659,12 +659,12 @@ p {
 
 .cv-publications {
     background: 
-        /* Traditional Kyrgyz carpet pattern for publications */
-        url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='carpet-pattern' x='0' y='0' width='40' height='40' patternUnits='userSpaceOnUse'%3E%3Cg fill='none' stroke='rgba(52,152,219,0.08)' stroke-width='0.5'%3E%3C!-- Traditional diamond motif --%3E%3Cpath d='M20 5 L30 15 L20 25 L10 15 Z' fill='rgba(52,152,219,0.02)' stroke='rgba(52,152,219,0.06)'/%3E%3C!-- Inner diamond --%3E%3Cpath d='M20 10 L25 15 L20 20 L15 15 Z' fill='rgba(52,152,219,0.03)' stroke='rgba(52,152,219,0.08)'/%3E%3C!-- Corner decorations --%3E%3Ccircle cx='5' cy='5' r='2' fill='rgba(52,152,219,0.04)'/%3E%3Ccircle cx='35' cy='5' r='2' fill='rgba(52,152,219,0.04)'/%3E%3Ccircle cx='5' cy='35' r='2' fill='rgba(52,152,219,0.04)'/%3E%3Ccircle cx='35' cy='35' r='2' fill='rgba(52,152,219,0.04)'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23carpet-pattern)'/%3E%3C/svg%3E"),
+        /* Elegant scroll pattern for publications */
+        url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='publication-scroll' x='0' y='0' width='50' height='50' patternUnits='userSpaceOnUse'%3E%3Cg fill='none' stroke='rgba(52,152,219,0.08)' stroke-width='0.8'%3E%3C!-- Central ornamental scroll --%3E%3Cpath d='M25 10 C20 15, 25 20, 30 15 C35 20, 40 15, 35 10 C30 5, 25 10, 25 10 Z' fill='rgba(52,152,219,0.025)' stroke='rgba(52,152,219,0.08)'/%3E%3C!-- Corner flourishes --%3E%3Cpath d='M10 10 Q15 5, 20 10 Q15 15, 10 10' stroke='rgba(52,152,219,0.06)' fill='rgba(52,152,219,0.02)'/%3E%3Cpath d='M30 10 Q35 5, 40 10 Q35 15, 30 10' stroke='rgba(52,152,219,0.06)' fill='rgba(52,152,219,0.02)'/%3E%3Cpath d='M10 30 Q15 25, 20 30 Q15 35, 10 30' stroke='rgba(52,152,219,0.06)' fill='rgba(52,152,219,0.02)'/%3E%3Cpath d='M30 30 Q35 25, 40 30 Q35 35, 30 30' stroke='rgba(52,152,219,0.06)' fill='rgba(52,152,219,0.02)'/%3E%3C!-- Connecting vine pattern --%3E%3Cpath d='M5 25 Q25 20, 45 25 Q35 30, 25 25 Q15 30, 5 25' stroke='rgba(52,152,219,0.05)' stroke-width='0.6' fill='none'/%3E%3Cpath d='M25 5 Q20 25, 25 45 Q30 35, 25 25 Q30 15, 25 5' stroke='rgba(52,152,219,0.05)' stroke-width='0.6' fill='none'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23publication-scroll)'/%3E%3C/svg%3E"),
         #f8f9fa;
     padding: 2rem;
     border-radius: 10px;
-    background-size: 80px 80px, cover;
+    background-size: 100px 100px, cover;
     background-repeat: repeat, no-repeat;
 }
 
@@ -736,15 +736,15 @@ p {
 
 .download-card {
     background: 
-        /* Kyrgyz felt pattern overlay */
-        url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='felt-pattern' x='0' y='0' width='50' height='50' patternUnits='userSpaceOnUse'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.1)' stroke-width='0.8'%3E%3C!-- Felt texture waves --%3E%3Cpath d='M0 25 Q12.5 15 25 25 Q37.5 35 50 25' fill='none'/%3E%3Cpath d='M0 35 Q12.5 25 25 35 Q37.5 45 50 35' fill='none'/%3E%3Cpath d='M0 15 Q12.5 5 25 15 Q37.5 25 50 15' fill='none'/%3E%3C!-- Traditional spiral motifs --%3E%3Ccircle cx='12.5' cy='12.5' r='4' fill='none' stroke='rgba(255,255,255,0.08)'/%3E%3Ccircle cx='37.5' cy='37.5' r='4' fill='none' stroke='rgba(255,255,255,0.08)'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23felt-pattern)'/%3E%3C/svg%3E"),
+        /* Elegant ornamental scroll pattern for download card */
+        url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='download-ornament' x='0' y='0' width='60' height='60' patternUnits='userSpaceOnUse'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.1)' stroke-width='1'%3E%3C!-- Royal fleur-de-lis pattern --%3E%3Cpath d='M30 15 C25 10, 20 15, 25 20 C20 25, 25 30, 30 25 C35 30, 40 25, 35 20 C40 15, 35 10, 30 15 Z M30 25 L30 30 M27 27 L33 27' stroke='rgba(255,255,255,0.12)' fill='rgba(255,255,255,0.04)'/%3E%3C!-- Corner scroll flourishes --%3E%3Cpath d='M10 10 Q15 5, 20 10 Q25 15, 20 20 Q15 25, 10 20 Q5 15, 10 10' stroke='rgba(255,255,255,0.08)' fill='rgba(255,255,255,0.025)'/%3E%3Cpath d='M40 10 Q45 5, 50 10 Q55 15, 50 20 Q45 25, 40 20 Q35 15, 40 10' stroke='rgba(255,255,255,0.08)' fill='rgba(255,255,255,0.025)'/%3E%3Cpath d='M10 40 Q15 35, 20 40 Q25 45, 20 50 Q15 55, 10 50 Q5 45, 10 40' stroke='rgba(255,255,255,0.08)' fill='rgba(255,255,255,0.025)'/%3E%3Cpath d='M40 40 Q45 35, 50 40 Q55 45, 50 50 Q45 55, 40 50 Q35 45, 40 40' stroke='rgba(255,255,255,0.08)' fill='rgba(255,255,255,0.025)'/%3E%3C!-- Delicate connecting vines --%3E%3Cpath d='M15 30 Q30 25, 45 30 Q30 35, 15 30' stroke='rgba(255,255,255,0.06)' stroke-width='0.8' fill='none'/%3E%3Cpath d='M30 15 Q25 30, 30 45 Q35 30, 30 15' stroke='rgba(255,255,255,0.06)' stroke-width='0.8' fill='none'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23download-ornament)'/%3E%3C/svg%3E"),
         linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     padding: 3rem 2rem;
     border-radius: 15px;
     max-width: 600px;
     margin: 0 auto;
-    background-size: 100px 100px, cover;
+    background-size: 120px 120px, cover;
     background-repeat: repeat, no-repeat;
 }
 
@@ -982,7 +982,7 @@ footer {
 
     /* Mobile Hero Layout */
     .hero {
-        background-size: 80px 80px, cover; /* Smaller pattern for mobile */
+        background-size: 100px 100px, cover; /* Smaller scroll pattern for mobile */
     }
     
     .hero-layout {
@@ -993,7 +993,7 @@ footer {
 
     /* CV Mobile Layout */
     .cv-hero {
-        background-size: 90px 90px, cover; /* Smaller yurt pattern for mobile */
+        background-size: 120px 120px, cover; /* Smaller scroll pattern for mobile */
     }
     
     .cv-hero-layout {
@@ -1184,11 +1184,11 @@ footer {
 
     .hero {
         padding: 100px 0 60px 0;
-        background-size: 60px 60px, cover; /* Even smaller pattern for very small screens */
+        background-size: 80px 80px, cover; /* Even smaller scroll pattern for very small screens */
     }
 
     .cv-hero {
-        background-size: 70px 70px, cover; /* Even smaller yurt pattern for very small screens */
+        background-size: 90px 90px, cover; /* Even smaller scroll pattern for very small screens */
     }
 
     .cv-profile-image {
@@ -1248,7 +1248,7 @@ footer {
 /* Add medium tablet breakpoint */
 @media (max-width: 992px) and (min-width: 769px) {
     .hero {
-        background-size: 100px 100px, cover; /* Medium pattern size for tablets */
+        background-size: 120px 120px, cover; /* Medium scroll pattern size for tablets */
     }
     
     .hero-layout {
@@ -1258,7 +1258,7 @@ footer {
     }
 
     .cv-hero {
-        background-size: 110px 110px, cover; /* Medium yurt pattern size for tablets */
+        background-size: 140px 140px, cover; /* Medium scroll pattern size for tablets */
     }
     
     .cv-hero-layout {
@@ -1321,7 +1321,11 @@ footer {
 @media (max-width: 768px) and (orientation: landscape) {
     .hero {
         padding: 80px 0 60px 0;
-        background-size: 70px 70px, cover; /* Adjusted pattern size for landscape mobile */
+        background-size: 90px 90px, cover; /* Adjusted scroll pattern size for landscape mobile */
+    }
+    
+    .cv-hero {
+        background-size: 100px 100px, cover; /* Adjusted scroll pattern for CV in landscape */
     }
     
     .nav-menu {
